@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <script>
+    function send() {
+        var genders = document.getElementsByName("gender");
+        if (genders[0].checked == true) {
+          //  alert("Your gender is male");
+        } else if (genders[1].checked == true) {
+          //  alert("Your gender is female");
+        } else {
+         alert("Please select your gender")
+        }
+        return true;
+    }
+
+    function reset_msg() {
+        document.getElementById('msg').innerHTML = '';
+    }
+    function checkCheckBoxes(theForm) {
+    if (
+    theForm.MyCheckbox.checked == false) 
+    {
+        alert ("Term and conditions should be checked!");
+        return false;
+    } else {    
+        return true;
+    }
+}
+function Validate()
+            {
+                var e = document.getElementById("ddlView");
+                var strUser = e.options[e.selectedIndex].value;
+
+                var strUser1 = e.options[e.selectedIndex].text;
+                if(strUser==0)
+                {
+                    alert("Please select a country");
+                }
+            }
+</script>
+<style>
+  .button2 {
+    background-color: #1e9c9c;
+  border: none;
+  color: white;
+  width: 100%;
+  border: 2px solid red;
+  border-radius: 4px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline;
+  font-size: 16px;
+  cursor: pointer;
+}
+.button2:hover{
+  background-color: #ec5b2f;
+}
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 2px solid red;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=password], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 2px solid red;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=email], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 2px solid red;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=submit] {
+  width: 100%; 
+   background-color: #1e9c9c;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: 2px solid red;
+  border-radius: 4px;
+  cursor: pointer;
+}
+input[type=reset] {
+  width: 100%;
+  background-color: #1e9c9c;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: 2px solid red;
+  border-radius: 4px;
+  cursor: pointer;
+}
+input[type=submit]:hover {
+  background-color: #ec5b2f;
+}
+input[type=reset]:hover {
+  background-color: #ec5b2f;
+}
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+<body>
+  <h1 style="margin-left: 570px;">Kindly Fill The Form Below</h1>
+<div>
+  <form onsubmit="return checkCheckBoxes(this)";>
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+    <label for="email">Email:</label>
+  <input type="email" id="email" name="email"placeholder="Email"><br><br>
+  <label for="pwd">Password:</label>
+  <input type="password" id="pwd" name="pwd" minlength="8"placeholder="Password"><br><br>
+    <label for="country">Country</label>
+    <select id="ddlView">
+      <option value="0">Select</option>
+      <option value="1">India</option>
+      <option value="2">Canada</option>
+      <option value="3">U.S.A</option>
+  </select>
+
+    <h2><label>Gender:</label></h2>
+    <br>
+    <input type="radio" name="gender" value="m" onclick="reset_msg();" />Male
+    <br />
+    <br>
+    <br>
+    <input type="radio" name="gender" value="f" onclick="reset_msg();" />Female
+    <br />
+    <div id="msg"></div>
+    <h3><p><input type="CHECKBOX" name="MyCheckbox" value="This..."> I agree with all the terms and condition</p></h3>
+  <input type="submit" value="Submit" onclick="return send(), Validate()" />
+  <input type="reset" value="Reset">
+  </form>
+</div>
+</body>
+</html>
